@@ -1021,7 +1021,7 @@ function unlink_node(context, path, callback) {
       if(!_(directoryData).has(name)) {
         callback(new Errors.ENOENT('a component of the path does not name an existing file', name));
       } else {
-        context.getObject(directoryData[name].id, check_if_node_is_directory);
+        context.getObject(directoryData[name].id, update_file_node);
       }
     }
   }
